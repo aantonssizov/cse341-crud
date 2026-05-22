@@ -1,0 +1,109 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "CRUD API",
+    "description": "Api for CRUD application",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://cse341-contacts-moso.onrender.com"
+    }
+  ],
+  "paths": {
+    "/books/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/bookCreate"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/books/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "bookCreate": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "example": "TEST"
+          },
+          "author": {
+            "type": "string",
+            "example": "TEST"
+          },
+          "publishYear": {
+            "type": "number",
+            "example": 1900
+          },
+          "pages": {
+            "type": "number",
+            "example": 200
+          },
+          "genre": {
+            "type": "string",
+            "example": "TEST"
+          },
+          "linkToBuy": {
+            "type": "string",
+            "example": "TEST"
+          },
+          "isBanned": {
+            "type": "boolean",
+            "example": true
+          }
+        },
+        "required": [
+          "title",
+          "author",
+          "publishYear",
+          "pages",
+          "genre",
+          "linkToBuy",
+          "isBanned"
+        ]
+      }
+    }
+  }
+}
