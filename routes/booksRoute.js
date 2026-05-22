@@ -27,6 +27,7 @@ router.post(
 router.put(
   "/:id",
   booksValidator.bookIdValidationRules,
+  booksValidator.bookUpdateValidationRules,
   booksValidator.bookValidationResult,
   handleErrors(booksController.update),
 );
