@@ -18,26 +18,16 @@
       "get": {
         "description": "",
         "responses": {
-          "200": {
-            "description": "OK"
+          "default": {
+            "description": ""
           }
         }
       },
       "post": {
         "description": "",
         "responses": {
-          "200": {
-            "description": "OK"
-          }
-        },
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/bookCreate"
-              }
-            }
+          "422": {
+            "description": "Unprocessable Entity"
           }
         }
       }
@@ -56,8 +46,44 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK"
+          "422": {
+            "description": "Unprocessable Entity"
+          }
+        }
+      },
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "422": {
+            "description": "Unprocessable Entity"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "422": {
+            "description": "Unprocessable Entity"
           }
         }
       }
@@ -106,6 +132,39 @@
           "linkToBuy",
           "isBanned"
         ]
+      },
+      "bookUpdate": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "example": "TEST"
+          },
+          "author": {
+            "type": "string",
+            "example": "TEST"
+          },
+          "publishYear": {
+            "type": "number",
+            "example": 1900
+          },
+          "pages": {
+            "type": "number",
+            "example": 200
+          },
+          "genre": {
+            "type": "string",
+            "example": "TEST"
+          },
+          "linkToBuy": {
+            "type": "string",
+            "example": "TEST"
+          },
+          "isBanned": {
+            "type": "boolean",
+            "example": true
+          }
+        }
       }
     }
   }

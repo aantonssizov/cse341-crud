@@ -44,4 +44,31 @@ const addNewBook = async (
   return insertResult.acknowledged;
 };
 
-module.exports = { getAllBooks, getBookById, addNewBook };
+const updateBook = async (id, data) => {
+  const booksCollection = await getBooksCollection();
+  const result = await booksCollection.findOneAndUpdate(
+    { _id: new ObjectId(id) },
+    {
+      $set: data,
+    },
+  );
+
+  return result;
+};
+
+const deleteBook = async (id) => {
+  const booksCollection = await getBooksCollection();
+  const result = await booksCollection.findOneAndDelete({
+    _id: new ObjectId(id),
+  });
+
+  return result;
+};
+
+module.exports = {
+  getAllBooks,
+  getBookById,
+  addNewBook,
+  updateBook,
+  deleteBook,
+};

@@ -17,3 +17,8 @@ app.use("/books/", booksRoute);
 app.listen(port, () => {
   console.log(`CRUD app listening on port ${port}`);
 });
+
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send("Something broke!");
+});

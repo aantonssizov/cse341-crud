@@ -21,6 +21,15 @@ const doc = {
         $linkToBuy: "TEST",
         $isBanned: true,
       },
+      bookUpdate: {
+        title: "TEST",
+        author: "TEST",
+        publishYear: 1900,
+        pages: 200,
+        genre: "TEST",
+        linkToBuy: "TEST",
+        isBanned: true,
+      },
     },
   },
 };
