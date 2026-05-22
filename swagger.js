@@ -4,7 +4,10 @@ const doc = {
   info: { title: "CRUD API", description: "Api for CRUD application" },
   servers: [
     {
-      url: "https://cse341-contacts-moso.onrender.com",
+      url: "https://cse341-crud-t5pm.onrender.com",
+    },
+    {
+      url: "localhost:7500",
     },
   ],
   components: {
