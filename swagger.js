@@ -7,7 +7,7 @@ const doc = {
       url: "https://cse341-crud-t5pm.onrender.com",
     },
     {
-      url: "localhost:7500",
+      url: "http://localhost:7500/",
     },
   ],
   components: {
@@ -29,6 +29,26 @@ const doc = {
         genre: "TEST",
         linkToBuy: "TEST",
         isBanned: true,
+      },
+      movieCreate: {
+        $title: "Katyn",
+        $director: "Andrzej Wajda",
+        $publishYear: 2007,
+        $runtimeMinutes: 122,
+        $genre: "Historical Political Drama",
+        $linkToBuy:
+          "https://www.amazon.com/Katyn-Maja-Ostaszewska/dp/B002ZG97SW",
+        $isBanned: false,
+      },
+      movieUpdate: {
+        title: "Katyn",
+        director: "Andrzej Wajda",
+        publishYear: 2007,
+        runtimeMinutes: 122,
+        genre: "Historical Political Drama",
+        linkToBuy:
+          "https://www.amazon.com/Katyn-Maja-Ostaszewska/dp/B002ZG97SW",
+        isBanned: false,
       },
     },
   },

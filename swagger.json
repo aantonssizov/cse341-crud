@@ -10,7 +10,7 @@
       "url": "https://cse341-crud-t5pm.onrender.com"
     },
     {
-      "url": "localhost:7500"
+      "url": "http://localhost:7500/"
     }
   ],
   "paths": {
@@ -28,6 +28,16 @@
         "responses": {
           "422": {
             "description": "Unprocessable Entity"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/bookCreate"
+              }
+            }
           }
         }
       }
@@ -66,6 +76,110 @@
         "responses": {
           "422": {
             "description": "Unprocessable Entity"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/bookUpdate"
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "422": {
+            "description": "Unprocessable Entity"
+          }
+        }
+      }
+    },
+    "/movies/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "responses": {
+          "422": {
+            "description": "Unprocessable Entity"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/movieCreate"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/movies/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "422": {
+            "description": "Unprocessable Entity"
+          }
+        }
+      },
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "422": {
+            "description": "Unprocessable Entity"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/movieUpdate"
+              }
+            }
           }
         }
       },
@@ -163,6 +277,81 @@
           "isBanned": {
             "type": "boolean",
             "example": true
+          }
+        }
+      },
+      "movieCreate": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "example": "Katyn"
+          },
+          "director": {
+            "type": "string",
+            "example": "Andrzej Wajda"
+          },
+          "publishYear": {
+            "type": "number",
+            "example": 2007
+          },
+          "runtimeMinutes": {
+            "type": "number",
+            "example": 122
+          },
+          "genre": {
+            "type": "string",
+            "example": "Historical Political Drama"
+          },
+          "linkToBuy": {
+            "type": "string",
+            "example": "https://www.amazon.com/Katyn-Maja-Ostaszewska/dp/B002ZG97SW"
+          },
+          "isBanned": {
+            "type": "boolean",
+            "example": false
+          }
+        },
+        "required": [
+          "title",
+          "director",
+          "publishYear",
+          "runtimeMinutes",
+          "genre",
+          "linkToBuy",
+          "isBanned"
+        ]
+      },
+      "movieUpdate": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "example": "Katyn"
+          },
+          "director": {
+            "type": "string",
+            "example": "Andrzej Wajda"
+          },
+          "publishYear": {
+            "type": "number",
+            "example": 2007
+          },
+          "runtimeMinutes": {
+            "type": "number",
+            "example": 122
+          },
+          "genre": {
+            "type": "string",
+            "example": "Historical Political Drama"
+          },
+          "linkToBuy": {
+            "type": "string",
+            "example": "https://www.amazon.com/Katyn-Maja-Ostaszewska/dp/B002ZG97SW"
+          },
+          "isBanned": {
+            "type": "boolean",
+            "example": false
           }
         }
       }

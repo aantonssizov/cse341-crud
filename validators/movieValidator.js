@@ -1,26 +1,26 @@
 const { check, validationResult } = require("express-validator");
 
-const bookCreateValidationRules = [
+const movieCreateValidationRules = [
   check("title").notEmpty().isString(),
-  check("author").notEmpty().isString(),
+  check("director").notEmpty().isString(),
   check("publishYear").notEmpty().isNumeric().isLength({ min: 4, max: 4 }),
-  check("pages").notEmpty().isNumeric(),
+  check("runtimeMinutes").notEmpty().isNumeric(),
   check("genre").notEmpty().isString(),
   check("linkToBuy").notEmpty().isURL(),
   check("isBanned").notEmpty().isBoolean(),
 ];
 
-const bookUpdateValidationRules = [
+const movieUpdateValidationRules = [
   check("title").optional().isString(),
-  check("author").optional().isString(),
+  check("director").optional().isString(),
   check("publishYear").optional().isNumeric().isLength({ min: 4, max: 4 }),
-  check("pages").optional().isNumeric(),
+  check("runtimeMinutes").optional().isNumeric(),
   check("genre").optional().isString(),
   check("linkToBuy").optional().isURL(),
   check("isBanned").optional().isBoolean(),
 ];
 
 module.exports = {
-  bookCreateValidationRules,
-  bookUpdateValidationRules,
+  movieCreateValidationRules,
+  movieUpdateValidationRules,
 };

@@ -54,7 +54,7 @@ db.getCollection("books").insertMany([
   },
 ]);
 
-// Insert a few documents into the moovies collection.
+// Insert a few documents into the movies collection.
 db.getCollection("movies").insertMany([
   {
     title: "Burnt by the Sun",
