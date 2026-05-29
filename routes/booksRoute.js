@@ -3,7 +3,7 @@ const router = express.Router();
 const booksController = require("../controllers/booksController");
 const commonValidatior = require("../validators/commonValidator");
 const booksValidator = require("../validators/bookValidator");
-const { handleErrors } = require("../utilities/");
+const { handleErrors, isAuthenticated } = require("../utilities/");
 
 // Route to get all books
 router.get("/", handleErrors(booksController.getAll));
@@ -30,6 +30,7 @@ router.post(
               }
           } 
       */
+  isAuthenticated,
   booksValidator.bookCreateValidationRules,
   commonValidatior.commonValidationResult,
   handleErrors(booksController.addNew),
@@ -49,6 +50,7 @@ router.put(
               }
           } 
       */
+  isAuthenticated,
   commonValidatior.idValidationRules,
   booksValidator.bookUpdateValidationRules,
   commonValidatior.commonValidationResult,
@@ -58,6 +60,7 @@ router.put(
 // Route to delete a book
 router.delete(
   "/:id",
+  isAuthenticated,
   commonValidatior.idValidationRules,
   commonValidatior.commonValidationResult,
   handleErrors(booksController.delete),

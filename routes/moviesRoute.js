@@ -3,7 +3,7 @@ const router = express.Router();
 const moviesController = require("../controllers/moviesController");
 const commonValidatior = require("../validators/commonValidator");
 const moviesValidator = require("../validators/movieValidator");
-const { handleErrors } = require("../utilities");
+const { handleErrors, isAuthenticated } = require("../utilities");
 
 // Route to get all movies
 router.get("/", handleErrors(moviesController.getAll));
@@ -30,6 +30,7 @@ router.post(
             }
         } 
     */
+  isAuthenticated,
   moviesValidator.movieCreateValidationRules,
   commonValidatior.commonValidationResult,
   handleErrors(moviesController.addNew),
@@ -49,6 +50,7 @@ router.put(
             }
         } 
     */
+  isAuthenticated,
   commonValidatior.idValidationRules,
   moviesValidator.movieUpdateValidationRules,
   commonValidatior.commonValidationResult,
@@ -58,6 +60,7 @@ router.put(
 // Route to delete a movie
 router.delete(
   "/:id",
+  isAuthenticated,
   commonValidatior.idValidationRules,
   commonValidatior.commonValidationResult,
   handleErrors(moviesController.delete),

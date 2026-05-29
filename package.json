@@ -21,13 +21,22 @@
   },
   "dependencies": {
     "body-parser": "^2.2.2",
+    "connect-sqlite3": "^0.9.16",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
+    "express-session": "^1.19.0",
     "express-validator": "^7.3.2",
     "mongodb": "^7.2.0",
+    "morgan": "^1.10.1",
+    "passport": "^0.7.0",
+    "passport-google-oidc": "^0.1.0",
     "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
     "swagger-autogen": "^2.23.7"
+  },
+  "allowScripts": {
+    "@scarf/scarf@1.4.0": true,
+    "sqlite3@5.1.7": true
   }
 }

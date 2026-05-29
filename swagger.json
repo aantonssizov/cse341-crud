@@ -14,18 +14,51 @@
     }
   ],
   "paths": {
+    "/oauth2/login": {
+      "get": {
+        "description": "",
+        "responses": {
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/oauth2/redirect/google": {
+      "get": {
+        "description": "",
+        "responses": {
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/oauth2/logout": {
+      "get": {
+        "description": "",
+        "responses": {
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
     "/books/": {
       "get": {
         "description": "",
         "responses": {
-          "default": {
-            "description": ""
+          "403": {
+            "description": "Forbidden"
           }
         }
       },
       "post": {
         "description": "",
         "responses": {
+          "403": {
+            "description": "Forbidden"
+          },
           "422": {
             "description": "Unprocessable Entity"
           }
@@ -56,6 +89,9 @@
           }
         ],
         "responses": {
+          "403": {
+            "description": "Forbidden"
+          },
           "422": {
             "description": "Unprocessable Entity"
           }
@@ -74,6 +110,9 @@
           }
         ],
         "responses": {
+          "403": {
+            "description": "Forbidden"
+          },
           "422": {
             "description": "Unprocessable Entity"
           }
@@ -102,6 +141,9 @@
           }
         ],
         "responses": {
+          "403": {
+            "description": "Forbidden"
+          },
           "422": {
             "description": "Unprocessable Entity"
           }
@@ -112,14 +154,17 @@
       "get": {
         "description": "",
         "responses": {
-          "default": {
-            "description": ""
+          "403": {
+            "description": "Forbidden"
           }
         }
       },
       "post": {
         "description": "",
         "responses": {
+          "403": {
+            "description": "Forbidden"
+          },
           "422": {
             "description": "Unprocessable Entity"
           }
@@ -150,6 +195,9 @@
           }
         ],
         "responses": {
+          "403": {
+            "description": "Forbidden"
+          },
           "422": {
             "description": "Unprocessable Entity"
           }
@@ -168,6 +216,9 @@
           }
         ],
         "responses": {
+          "403": {
+            "description": "Forbidden"
+          },
           "422": {
             "description": "Unprocessable Entity"
           }
@@ -196,6 +247,9 @@
           }
         ],
         "responses": {
+          "403": {
+            "description": "Forbidden"
+          },
           "422": {
             "description": "Unprocessable Entity"
           }

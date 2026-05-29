@@ -141,3 +141,7 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+client_secret.apps.googleusercontent.com.json
+
+public/var/db/session.db
