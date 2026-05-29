@@ -144,4 +144,4 @@ vite.config.ts.timestamp-*
 
 client_secret.apps.googleusercontent.com.json
 
-public/var/db/session.db
+database/session.db

@@ -20,7 +20,7 @@ app.use(
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
-    store: new SQLiteStore({ db: "session.db", dir: "./public/var/db" }),
+    store: new SQLiteStore({ db: "session.db", dir: "./database" }),
   }),
 );
 
